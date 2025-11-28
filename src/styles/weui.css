@@ -1,0 +1,48 @@
+.btnp {
+  border: none !important;
+  padding: 0 20rpx !important;
+  margin: 0 !important;
+  width: auto !important;
+  font-size: 30rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  background: #27ba9b;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.btnp::before {
+  display: none;
+}
+
+.btnp::after {
+  display: none;
+}
+
+.btnp-warn {
+  color: #f13e6d !important;
+  background: #eeeeee !important;
+}
+
+.btnp-opt {
+  color: #999999 !important;
+  border: 1rpx solid #eeeeee;
+  background: none !important;
+}
+
+.btnp-disabled {
+  background: #f7f7f7 !important;
+  color: #aaaaaa !important;
+  border-color: #f7f7f7;
+}
+
+.btnp-plain {
+  color: #27ba9b !important;
+  background: none !important;
+  border: 1rpx solid #27ba9b !important;
+}
+
+.btnp-nom {
+  color: #27ba9b !important;
+  background: #eeeeee !important;
+}

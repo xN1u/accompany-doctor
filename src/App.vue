@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import { onLaunch, onShow, onHide } from '@dcloudio/uni-app'
 
+App({
+  globalData: {
+    switchTab: 0,
+  },
+})
+
 onLaunch(() => {
   console.log('App Launch')
 })
@@ -15,6 +21,7 @@ onHide(() => {
 <style lang="scss">
 // 字体图标
 @import '@/styles/fonts.scss';
+@import '@/styles/weui.css';
 
 view,
 navigator,
