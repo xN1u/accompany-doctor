@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { getUserInfoDataApi } from '@/services/user'
 import type { Mine, Statistic, UserInfoData } from '@/types/user'
 import { onLoad, onShow } from '@dcloudio/uni-app'
@@ -9,7 +9,7 @@ const userInfo = ref<UserInfoData>()
 const mineData = ref<Mine>()
 const statisticData = ref<Statistic>()
 const userStore = useUserStore()
-const token = userStore.token || ''
+const token = computed(() => userStore.token || '')
 
 const getUserInfoData = async () => {
   const res = await getUserInfoDataApi()
