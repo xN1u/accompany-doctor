@@ -60,6 +60,7 @@ const getCurrentPagesLength = () => {
 }
 
 const getCapsuleButton = () => {
+  // #ifdef MP-WEIXIN
   const res = uni.getMenuButtonBoundingClientRect()
   if (res) {
     capsuleStyle.value = `
@@ -70,16 +71,35 @@ const getCapsuleButton = () => {
       font-weight: lighter;
     `
   }
+  // #endif
+
+  // #ifdef H5
+  capsuleStyle.value = `
+    height: 80rpx;
+    line-height: 80rpx;
+    width: 200rpx;
+    margin-top: 20rpx;
+    font-weight: lighter;
+  `
+  // #endif
 }
 
 const backOrHome = () => {
+  // #ifdef MP-WEIXIN
   if (pageLength.value > 1) {
     uni.navigateBack()
   } else {
-    uni.switchTab({
-      url: '/pages/index/index',
-    })
+    uni.switchTab({ url: '/pages/index/index' })
   }
+  // #endif
+
+  // #ifdef H5
+  if (pageLength.value > 1) {
+    window.history.back()
+  } else {
+    uni.navigateTo({ url: '/pages/index/index' })
+  }
+  // #endif
 }
 
 const initAreas = async () => {
